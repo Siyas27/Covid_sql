@@ -1,14 +1,10 @@
 show variables like "local_infile";
 
-select * from covid_deaths;
-
 load data local infile 'C:\\Users\\Dell\\Documents\\project_material\\covid_deaths.csv'
 into table covid_deaths
 fields terminated by ","
 ignore 16 rows;
 
-select * from covid_deaths
-where location = "India";
 
 load data local infile 'C:\\Users\\Dell\\Documents\\project_material\\covid_vaccination.csv'
 into table covid_vaccination
@@ -30,16 +26,6 @@ from covid_deaths
 group by location, population
 order by percent_population_affected desc;
 
-select * from covid_vaccination
-where location = "bahrain";
-
-DROP TABLE covid_vaccination;
-DROP TABLE covid_deaths;
-
-
-select * from covid_vaccination;
-delete from covid_vaccination
-where location ="afghanistan";
 
 select * from covid_deaths;
 
